@@ -29,8 +29,10 @@ public class HomeController {
 	}
 	
 	@PostMapping("/burger/new")
-	public String createBurger(@Valid @ModelAttribute("newBurger") Burger newBurger, BindingResult result) {
+	public String createBurger(@Valid @ModelAttribute("newBurger") Burger newBurger, BindingResult result, Model model) {
 		if(result.hasErrors()) {
+			List<Burger> allBurgers = burgerServ.findAll();
+			model.addAttribute("allBurgers", allBurgers);
 			return "index.jsp";
 		}
 		burgerServ.create(newBurger);
