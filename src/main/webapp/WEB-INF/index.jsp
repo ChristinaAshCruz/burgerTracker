@@ -28,7 +28,10 @@ pageEncoding="UTF-8"%>
     />
   </head>
   <body>
-    <h1 class="mb-4">🍔 Burger Tracker</h1>
+    <div class="row d-flex mb-3">
+      <img src="/img/hamburger.png" class="col"/>
+      <h1 class="col-11 mt-2"> Burger Tracker</h1>
+    </div>
     <div class="card p-4 mb-3">
       <table class="table">
         <thead>
@@ -86,6 +89,15 @@ pageEncoding="UTF-8"%>
         </div>
         <button class="btn">Submit</button>
       </form:form>
+    </div>
+    <div class="mt-3 d-flex justify-content-between"> 
+      <div>
+        Icons made by 
+        <a href="https://www.flaticon.com/authors/freepik" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a>
+      </div>
+      <div>
+        <a class="btn px-4" href="https://github.com/ChristinaAshCruz" role="button">Come visit my GitHub!</a>
+      </div>
     </div>
   </body>
 </html>
