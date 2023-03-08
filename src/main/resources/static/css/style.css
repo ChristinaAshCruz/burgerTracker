@@ -22,7 +22,15 @@ h2 {
 	background-color:#FEF5E0;
 	border-radius: 15px;
 }
-
+.btn {
+	background-color: #FCAE1B;
+	border:2px solid #FCAE1B;
+	color:#960f18;
+}
+.btn:hover {
+	border:2px solid #FCAE1B;
+	color:#C11723;
+}
 tr {
 	color:#C11723;
 	border-color:#FCAE1B;

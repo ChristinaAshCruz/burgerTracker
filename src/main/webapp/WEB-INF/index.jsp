@@ -33,78 +33,59 @@ pageEncoding="UTF-8"%>
       <table class="table">
         <thead>
           <tr id="header-row">
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Burger Name</th>
+            <th scope="col">Restaurant Name</th>
+            <th scope="col">Rating(out of 5)</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          <c:forEach var="burger" items="${allBurgers}">
+            <tr>
+              <td><c:out value="${burger.burgerName}" /></td>
+              <td><c:out value="${burger.restaurantName}" /></td>
+              <td><c:out value="${burger.rating}" /></td>
+              <td>edit | delete</td>
+            </tr>
+          </c:forEach>
         </tbody>
       </table>
     </div>
     <div class="card p-4">
       <h2>Create a new Burger!</h2>
       <hr class="mb-3" />
-      <form action="">
+      <form:form action="/burger/new" method="POST" modelAttribute="newBurger">
+          
+          <div class="mb-3">
+              <form:label path="burgerName" class="form-label"
+              >Burger Name:</form:label
+              >
+              <em><form:errors path="burgerName" ></form:errors></em>
+          <form:input type="text" class="form-control" path="burgerName" />
+        </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Burger Name:</label
+          <form:label path="restaurantName" class="form-label"
+            >Restaurant Name:</form:label
           >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
+          <em><form:errors path="restaurantName" ></form:errors></em>
+          <form:input type="text" class="form-control" path="restaurantName" />
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Restaurant Name:</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
+          <form:label path="rating" class="form-label">Rating:</form:label>
+          <em><form:errors path="rating" ></form:errors></em>
+          <form:input type="number" class="form-control" path="rating" min="0" max="5" />
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Rating:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Notes:</label>
-          <textarea
+            <form:label path="notes" class="form-label">Notes:</form:label>
+            <em><form:errors path="notes" ></form:errors></em>
+          <form:textarea
             class="form-control"
             placeholder="Leave a comment here"
-            id="floatingTextarea2"
-            style="height: 100px"
-          ></textarea>
+            path="notes"
+           />
         </div>
-      </form>
+        <button class="btn">Submit</button>
+      </form:form>
     </div>
   </body>
 </html>
