@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.christinac.burgertracker.models.Burger;
 import com.christinac.burgertracker.services.BurgerService;
@@ -37,5 +39,23 @@ public class HomeController {
 		}
 		burgerServ.create(newBurger);
 		return "redirect:/";
+	}
+	
+	@GetMapping("/burgers/{id}/edit")
+	public String editBurger(@PathVariable("id") Long id, Model model) {
+		Burger thisBurger = burgerServ.findById(id);
+		model.addAttribute("thisBurger", thisBurger);
+		return "editBurger.jsp";
+	}
+	
+	@PutMapping("burgers/{id}/edit")
+	public String updateBurger(@Valid @ModelAttribute("thisBurger") Burger thisBurger, BindingResult result, @PathVariable("id") Long id) {
+		if(result.hasErrors()) {
+			return "editBurger.jsp";
+		} else {
+			thisBurger.setId(id);
+			burgerServ.update(thisBurger);
+			return "redirect:/";
+		}
 	}
 }

@@ -17,6 +17,13 @@ h2 {
 	font-family: 'Bebas Neue', cursive;
 	color: #C11723;
 }
+a {
+	color: #C11723;
+}
+a:hover {
+	text-decoration: none;
+	color:#FCAE1B;
+}
 .card {
 	border: 2px solid #FCAE1B;
 	background-color:#FEF5E0;

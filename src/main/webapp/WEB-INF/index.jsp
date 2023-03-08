@@ -48,7 +48,7 @@ pageEncoding="UTF-8"%>
               <td><c:out value="${burger.burgerName}" /></td>
               <td><c:out value="${burger.restaurantName}" /></td>
               <td><c:out value="${burger.rating}" /></td>
-              <td>edit | delete</td>
+              <td><a href="/burgers/${burger.id}/edit">Edit</a> | <a href="/burgers/${burger.id}/delete">Delete</a></td>
             </tr>
           </c:forEach>
         </tbody>
