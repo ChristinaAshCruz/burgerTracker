@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+	margin: 35px;
+	background-color: #FEF5E0;
+	font-family: 'Sen', sans-serif;
+	font-weight:400;
+	color:#C11723;
+	font-size: 18px;
+}
+
+h1 {
+	font-family: 'Climate Crisis', cursive;
+	color: #C11723;
+}
+h2 {
+	font-family: 'Bebas Neue', cursive;
+	color: #C11723;
+}
+.card {
+	border: 2px solid #FCAE1B;
+	background-color:#FEF5E0;
+	border-radius: 15px;
+}
+
+tr {
+	color:#C11723;
+	border-color:#FCAE1B;
+}
+
+
+#header-row {
+	border-radius: 20px;
+	background-color: #FED285;
+	color: #C11723;
+}
+hr {
+	margin: 0px 10px;
+	color: rgba(193, 23, 35, 1);
+}
