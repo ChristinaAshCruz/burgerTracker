@@ -34,4 +34,8 @@ public class BurgerService {
 	public Burger update(Burger b) {
 		return burgerRepo.save(b);
 	}
+	
+	public void delete(Long id) {
+		burgerRepo.deleteById(id);
+	}
 }

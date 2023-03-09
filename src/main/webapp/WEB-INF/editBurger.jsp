@@ -68,5 +68,14 @@ pageEncoding="UTF-8"%>
         <button class="btn">Update Burger</button>
       </form:form>
     </div>
+    <div class="mt-3 d-flex justify-content-between"> 
+      <div>
+        Icons made by 
+        <a href="https://www.flaticon.com/authors/freepik" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a>
+      </div>
+      <div>
+        <a class="btn px-4" href="/" role="button">Return to home</a>
+      </div>
+    </div>
   </body>
 </html>

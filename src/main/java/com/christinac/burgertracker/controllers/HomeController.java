@@ -58,4 +58,10 @@ public class HomeController {
 			return "redirect:/";
 		}
 	}
+	
+	@GetMapping("burgers/{id}/delete")
+	public String deleteBurger(@PathVariable("id") Long id) {
+		burgerServ.delete(id);
+		return "redirect:/";
+	}
 }

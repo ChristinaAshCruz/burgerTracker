@@ -2,11 +2,13 @@
 
 body {
 	margin: 35px;
-	background-color: #FEF5E0;
+
 	font-family: 'Sen', sans-serif;
 	font-weight:400;
 	color:#C11723;
 	font-size: 18px;
+	background-color: #fef5e0;
+	background-image: url("/img/arches.png");
 }
 
 h1 {
